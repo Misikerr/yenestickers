@@ -9,7 +9,7 @@ const ShopContextProvider = (props) => {
 
     const currency = 'ETB ';
     const delivery_fee = 30;
-    const backendUrl = 'https://yenestickers-backend.onrender.com';
+    const backendUrl = "https://yenestickers-backend.onrender.com";
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
