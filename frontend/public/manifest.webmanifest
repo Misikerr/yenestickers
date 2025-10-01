@@ -1,1 +1,24 @@
+{
+  "name": "YeneStickers",
+  "short_name": "YeneStickers",
+  "description": "Shop 1000+ stickers and laptop skins. Aesthetic, durable, student-made.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/yene_logo_2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/yene_logo_2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
 
