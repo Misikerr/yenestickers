@@ -9,7 +9,7 @@ import Login from './components/Login'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
-export const backendUrl = 'https://yenestickers-backend.onrender.com';
+export const backendUrl = 'https://yenestickers-backend1.onrender.com';
 export const currency = 'ETB '
 
 const App = () => {
