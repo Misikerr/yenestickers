@@ -28,4 +28,4 @@ app.get('/',(req,res)=>{
     res.send("API Working")
 })
 
-app.listen(port, ()=>console.log('Listening on localhost : '+ port));
+app.listen(port, '0.0.0.0', ()=>console.log('Listening on localhost : '+ port));
