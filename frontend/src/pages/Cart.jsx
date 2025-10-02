@@ -3,10 +3,11 @@ import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
 import { assets } from '../assets/assets';
 import CartTotal from '../components/CartTotal';
+import { toast } from 'react-toastify';
 
 const Cart = () => {
 
-  const { products, currency, cartItems , updateQuantity, navigate, getCartAmount, serverPricing } = useContext(ShopContext);
+  const { products, currency, cartItems , updateQuantity, navigate, getCartAmount, serverPricing, token } = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
 
@@ -103,7 +104,18 @@ const Cart = () => {
           )}
           <div className='w-full text-end'>
             <button
-              onClick={()=> { if (getCartAmount() >= 100 && !goingCheckout) { setGoingCheckout(true); navigate('/place-order'); setGoingCheckout(false);} }}
+                            onClick={()=> { 
+                if (getCartAmount() >= 100 && !goingCheckout) { 
+                  if (!token) {
+                    toast.error('Please login to proceed to checkout');
+                    navigate('/login');
+                    return;
+                  }
+                  setGoingCheckout(true); 
+                  navigate('/place-order'); 
+                  setGoingCheckout(false);
+                } 
+              }}
               aria-disabled={getCartAmount() < 100}
               className={`text-sm my-8 px-8 py-3 rounded-md ${getCartAmount() < 100 || goingCheckout ? 'bg-gray-400 dark:bg-gray-700 text-white cursor-not-allowed opacity-70' : 'bg-black text-white hover:bg-gray-900'}`}
             >
