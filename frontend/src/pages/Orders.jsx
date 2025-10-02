@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Orders = () => {
 
-  const { backendUrl, token , currency} = useContext(ShopContext);
+  const { backendUrl, token , currency , navigate} = useContext(ShopContext);
 
   const [orderData, setorderData] = useState([])
 
@@ -42,9 +42,14 @@ const Orders = () => {
     }
   }
 
-  useEffect(()=>{
+    useEffect(()=>{
+    if (!token) {
+      toast.error('Please login to view your orders');
+      navigate('/login');
+      return;
+    }
     loadOrderData()
-  },[token])
+  },[token, navigate])
 
   return (
     <div className='border-t pt-16'>
