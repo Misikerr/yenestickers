@@ -162,8 +162,8 @@ POST /api/order/userorders # Get user orders
 
 ## 🚀 Deployment
 
-- **Frontend**: Vercel/Netlify
-- **Backend**: Railway/Heroku
+- **Frontend**: Render with Namecheap for DNS
+- **Backend**: Render
 - **Database**: MongoDB Atlas
 - **Images**: Cloudinary CDN
 
