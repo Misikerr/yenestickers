@@ -122,12 +122,12 @@ const Collection = () => {
         </div>
         {
           filterProducts.length > visibleCount && (
-            <div className='flex justify-center mt-6'>
+            <div className='flex justify-center mt-8 mb-4'>
               <button
                 onClick={() => setVisibleCount(prev => prev + 25)}
-                className='px-4 py-2 text-sm border border-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800'
+                className='px-6 py-3 text-sm font-medium border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors duration-200'
               >
-                Show More
+                Show More Products ({Math.min(25, filterProducts.length - visibleCount)} more)
               </button>
             </div>
           )
