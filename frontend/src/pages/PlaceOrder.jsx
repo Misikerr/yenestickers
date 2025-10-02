@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react'
+import React, { useContext, useMemo, useState, useEffect } from 'react'
 import Title from '../components/Title'
 import CartTotal from '../components/CartTotal'
 import { assets } from '../assets/assets'
@@ -22,8 +22,16 @@ const PlaceOrder = () => {
 const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, products, currency} = useContext(ShopContext);
 
   const { fullName, phone, address, deliveryOption, notes } = formData;
+  
+  // Redirect to login if user is not authenticated
+  useEffect(() => {
+    if (!token) {
+      toast.error('Please login to place an order');
+      navigate('/login');
+    }
+  }, [token, navigate]);
 
-  const cartTotal = useMemo(()=> getCartAmount(), [getCartAmount, cartItems, products]);
+  const cartTotal = useMemo(()=> getCartAmount(), [getCartAmount]);
   const computedDeliveryFee = useMemo(()=>{
     if(deliveryOption === 'pickup') return 0;
     if(deliveryOption === 'express') return 50;
@@ -52,6 +60,14 @@ const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, prod
     try {
       if (submitting) return;
       setSubmitting(true);
+
+            // Check if user is authenticated before proceeding
+      if (!token) {
+        toast.error('Please login to place an order');
+        navigate('/login');
+        return;
+      }
+      
       
       let orderItems = []
 
@@ -91,12 +107,37 @@ const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, prod
           setCartItems({})
           navigate('/orders')
       } else {
-        toast.error(response.data.message)
+        // Check if the error is related to authorization
+        if (response.data.message && (
+          response.data.message.toLowerCase().includes('not authorized') ||
+          response.data.message.toLowerCase().includes('unauthorized') ||
+          response.data.message.toLowerCase().includes('login') ||
+          response.data.message.toLowerCase().includes('authentication')
+        )) {
+          toast.error('Please login to continue');
+          navigate('/login');
+        } else {
+          toast.error(response.data.message)
+        }
       }
 
     } catch (error) {
       console.log(error)
-      toast.error(error.message)
+            // Check if it's an HTTP 401 Unauthorized error
+      if (error.response && error.response.status === 401) {
+        toast.error('Please login to continue');
+        navigate('/login');
+      } else if (error.response && error.response.data && error.response.data.message && (
+        error.response.data.message.toLowerCase().includes('not authorized') ||
+        error.response.data.message.toLowerCase().includes('unauthorized') ||
+        error.response.data.message.toLowerCase().includes('login') ||
+        error.response.data.message.toLowerCase().includes('authentication')
+      )) {
+        toast.error('Please login to continue');
+        navigate('/login');
+      } else {
+        toast.error(error.message)
+      }
     } finally {
       setSubmitting(false);
     }
