@@ -158,18 +158,7 @@ POST /api/order/place      # Place order
 POST /api/order/userorders # Get user orders
 ```
 
-## 🌍 Environment Variables
 
-### Backend (.env)
-```env
-MONGODB_URI=mongodb://localhost:27017/yenestickers
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_SECRET_KEY=your_secret_key
-ADMIN_EMAIL=admin@yenestickers.store
-ADMIN_PASSWORD=your_admin_password
-```
 
 ## 🚀 Deployment
 
