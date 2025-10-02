@@ -73,7 +73,7 @@ yenestickers/
 ### Setup
 ```bash
 # Clone repository
-git clone [https://github.com/YourUsername/yenestickers.git](https://github.com/Misikerr/yenestickers.git)
+git clone https://github.com/Misikerr/yenestickers.git
 cd yenestickers
 
 # Backend setup
