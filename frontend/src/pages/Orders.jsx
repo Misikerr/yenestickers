@@ -43,11 +43,6 @@ const Orders = () => {
   }
 
     useEffect(()=>{
-    if (!token) {
-      toast.error('Please login to view your orders');
-      navigate('/login');
-      return;
-    }
     loadOrderData()
   },[token, navigate])
 
