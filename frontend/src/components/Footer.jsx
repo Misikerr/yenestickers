@@ -23,7 +23,7 @@ const Footer = () => {
                 <li><Link to="/shop" className="hover:text-purple-600">Laptop Skins</Link></li>
                 <li><Link to="/about" className="hover:text-purple-600">About</Link></li>
                 <li><Link to="/contact" className="hover:text-purple-600">Contact</Link></li>
-                <li><a href="https://yenestickers-admin.onrender.com/" className="hover:text-purple-600" target="_blank" rel="noreferrer">Admin</a></li>
+                <li><a href="https://www.admin.yenestickers.store/" className="hover:text-purple-600" target="_blank" rel="noreferrer">Admin</a></li>
             </ul>
         </div>
 
