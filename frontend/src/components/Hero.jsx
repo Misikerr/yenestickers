@@ -6,7 +6,7 @@ const Hero = () => {
     <section className='min-h-screen flex flex-col items-center justify-center text-center'>
       
       <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-          Welcome to <span className="text-purple-600">የኔ_Stickers</span>! 🎨
+          Welcome to <span className="text-purple-600 dark:text-purple-600">የኔ_Stickers</span>! 🎨
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto">
           Transform your world with <span className="font-semibold text-indigo-400">1000+ unique stickers</span> and premium laptop skins that express your personality!
