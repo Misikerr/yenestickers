@@ -91,7 +91,7 @@ const Cart = () => {
               <p>Minimum order for checkout is 100 ብር. For smaller orders, please contact us on Telegram.</p>
               <div className='mt-3 flex justify-between items-center gap-3'>
                 <a
-                  href='https://t.me/YeneStickerGuy'
+                  href='https://t.me/YeneStickersAdmin'
                   target='_blank'
                   rel='noreferrer'
                   className='inline-flex items-center justify-center px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-600 text-white font-medium'
