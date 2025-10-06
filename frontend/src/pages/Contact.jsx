@@ -81,7 +81,7 @@ const Contact = () => {
                 <div className="space-y-4 text-gray-600">
                   <p className='flex items-center gap-2'>
                     <FaTelegramPlane className='text-blue-500' />
-                    <a href="https://t.me/YeneStickerGuy" target="_blank">YeneStickerGuy</a>
+                    <a href="https://t.me/YeneStickersAdmin" target="_blank">YeneStickersAdmin</a>
                   </p>
                   <p className='flex items-center gap-2'>
                     <FiPhone className='text-emerald-500' />
