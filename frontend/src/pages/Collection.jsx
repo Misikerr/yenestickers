@@ -109,7 +109,7 @@ const Collection = () => {
       </div>
 
       {/* Right Side */}
-      <div className='flex-1 text-gray-900 dark:text-gray-100'>
+      <div className='flex-1 text-gray-900 dark:text-gray-400'>
         {/* Loading */}
         {loadingProducts && <Loader label='Loading products...' />}
         {/* Map Products */}
