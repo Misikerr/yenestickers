@@ -58,7 +58,7 @@ const Collection = () => {
         {/* Category Filter */}
         <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>
           <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
-          <div className='grid grid-cols-2 md:grid-cols-1 gap-y-2 gap-x-4 text-sm font-light text-gray-700'>
+          <div className='grid grid-cols-2 md:grid-cols-1 gap-y-2 gap-x-4 text-sm font-light text-gray-700 dark:text-gray-400'>
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={'LaptopSkin'} onChange={toggleCategory} /> Laptop Skin
             </p>
