@@ -9,7 +9,7 @@ const HowToOrder = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             
             <div>
-              <h2 className=" text-3xl md:text-4xl font-extrabold text-center mb-6">
+              <h2 className=" text-slate-900 dark:text-gray-900 text-3xl md:text-4xl font-extrabold text-center mb-6">
                 CHOOSE FROM OUR<br />1000+ STICKERS & SKINS
               </h2>
               <ol className="list-decimal list-inside text-[#078BA6E2] dark:text-[#078BA6E2] marker:text-[#078BA6E2] dark:marker:text-[#078BA6E2] [&>li]:text-[#078BA6E2] dark:[&>li]:text-[#078BA6E2] space-y-2 mb-6">
