@@ -37,7 +37,7 @@ const PricingCards = () => {
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-7 text-center border-2 border-purple-500 dark:border-purple-400">
               <h3 className="text-xl font-bold mb-4">Small Stickers</h3>
               <p className="text-3xl font-bold text-purple-600 mb-4">40ብር</p>
-              <ul className="text-gray-600 text-left space-y-2">
+              <ul className="text-gray-600 dark:text-gray-400 text-left space-y-2">
                 <li><i className="fas fa-image text-rose-500"></i> <strong>900"x900" px</strong> – clean & crisp size</li>
                 <li><i className="fas fa-laptop text-emerald-500"></i> <strong>Perfect fit</strong> for laptops</li>
                 <li><i className="fas fa-heart text-rose-500"></i> <strong>Student favorite</strong> on campus</li>
@@ -50,7 +50,7 @@ const PricingCards = () => {
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-7 text-center border border-gray-200 dark:border-gray-700">
               <h3 className="text-xl font-bold mb-4">Large Stickers</h3>
               <p className="text-3xl font-bold text-purple-600 mb-4">45ብር</p>
-              <ul className="text-gray-600 text-left space-y-2">
+              <ul className="text-gray-600 dark:text-gray-400 text-left space-y-2">
                 <li><i className="fas fa-image text-rose-500"></i> 1200" x 1200" px size</li>
                 <li><i className="fas fa-home text-emerald-500"></i> Perfect for walls,notebooks and dorms</li>
                 <li><i className="fas fa-heart text-rose-500"></i> Loved by many customers</li>
@@ -61,10 +61,10 @@ const PricingCards = () => {
             
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-7 text-center border-2 border-blue-500 dark:border-blue-400">
               <h3 className="text-xl font-bold mb-4 flex items-center justify-center gap-2">Laptop Skins <i className="fas fa-laptop text-2xl"></i></h3>
-              <ul className="text-gray-600 space-y-2 mb-4">
+              <ul className="text-gray-600 dark:text-gray-400 space-y-2 mb-4">
                 <li><span className="text-3xl font-bold text-purple-600 mb-4">499.99ብር</span></li>
               </ul>
-              <ul className="text-gray-600 text-left space-y-2 mb-4">
+              <ul className="text-gray-600 dark:text-gray-400 text-left space-y-2 mb-4">
                 <li><i className="fas fa-magic text-amber-500"></i> <span className="font-semibold">Transform your laptop's look instantly!</span></li>
                 <li><i className="fas fa-shield-alt text-emerald-500"></i> <span className="font-semibold">Protects from scratches & dust</span></li>
                 <li><i className="fas fa-palette text-amber-500"></i> <span className="font-semibold">Unique, vibrant designs</span></li>
