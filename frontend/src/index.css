@@ -21,8 +21,8 @@ html {
 .dark body, .dark .app-shell {
   background-color: #0f172a;
 }
-.dark, .dark * {
-  color: #ffffffcc;
+.dark body {
+  color: #ffffffcc; /* base text color; allow utility classes to override */
 }
 .prata-regular {
   font-family: "Prata", serif;
