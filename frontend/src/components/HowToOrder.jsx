@@ -52,7 +52,7 @@ const HowToOrder = () => {
                 <li>
                   Contact our Order Account on
                   <a
-                    href="https://t.me/YeneStickerGuy"
+                    href="https://t.me/YeneStickersAdmin"
                     target="_blank"
                     className="text-blue-500 underline"
                   >Telegram</a>
@@ -79,7 +79,7 @@ const HowToOrder = () => {
               </p>
               <div className="animate-bounce flex justify-center mt-8">
                 <a
-                  href="https://t.me/YeneStickerGuy"
+                  href="https://t.me/YeneStickersAdmin"
                   target="_blank"
                   className="group relative overflow-hidden px-8 py-2.5 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-green-400 text-white text-lg font-semibold shadow-xl flex items-center gap-3 hover:scale-105 transition-transform duration-300 before:absolute before:inset-0 before:bg-gray-50 before:opacity-0 before:group-hover:opacity-10 before:transition-opacity before:duration-300"
                 ><span>🎁</span> Order Custom Stickers</a>
