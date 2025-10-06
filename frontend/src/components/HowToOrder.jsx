@@ -14,7 +14,7 @@ const HowToOrder = () => {
               </h2>
               <ol className="list-decimal list-inside text-[#078BA6E2] dark:text-[#078BA6E2] marker:text-[#078BA6E2] dark:marker:text-[#078BA6E2] [&>li]:text-[#078BA6E2] dark:[&>li]:text-[#078BA6E2] space-y-2 mb-6">
                 <li>
-                  Open the shop: <Link to="/shop" className="text-blue-500 underline">YeneStickers.store/shop</Link>
+                  Open the shop: <Link to="/shop" className="text-blue-500 dark:text-blue-500 underline">YeneStickers.store/shop</Link>
                 </li>
                 <li>Pick your size and quantity for each sticker or skin.</li>
                 <li>
@@ -24,7 +24,7 @@ const HowToOrder = () => {
                   Tap the cart icon at the top to review your selections and adjust quantities.
                 </li>
                 <li>
-                  Subtotal must be <span className="font-semibold">≥ 100 ብር</span> to checkout. For smaller orders, use our Telegram instead.
+                  Subtotal must be <span className="font-semibold text-[#078ba6f9] dark:text-[#078ba6]">≥ 100 ብር</span> to checkout. For smaller orders, use our Telegram instead.
                 </li>
                 <li>
                   Proceed to checkout, fill delivery info, choose delivery option, and continue to payment.
