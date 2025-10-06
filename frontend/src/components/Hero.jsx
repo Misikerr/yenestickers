@@ -9,7 +9,7 @@ const Hero = () => {
           Welcome to <span className="text-purple-600 dark:text-purple-600">የኔ_Stickers</span>! 🎨
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto">
-          Transform your world with <span className="font-semibold text-indigo-400">1000+ unique stickers</span> and premium laptop skins that express your personality!
+          Transform your world with <span className="font-semibold text-indigo-400 dark:text-indigo-400">1000+ unique stickers</span> and premium laptop skins that express your personality!
         </p>
         <div className='flex flex-col sm:flex-row gap-4 mb-12'>
           <Link to='/shop' className='bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 z-0'>
