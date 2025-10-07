@@ -56,7 +56,7 @@ const Orders = () => {
       <div>
         {
           orderData.map((item,index) => (
-            <div key={index} className='py-4 border-t border-b text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
+            <div key={index} className='py-4 border-t border-b text-gray-700 dark:text-gray-400 flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
               <div className='flex items-start gap-6 text-sm'>
                 <img className='w-16 sm:w-20' src={item.image[0]} alt="" />
                 <div>
