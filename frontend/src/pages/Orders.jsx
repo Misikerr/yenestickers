@@ -61,7 +61,7 @@ const Orders = () => {
                 <img className='w-16 sm:w-20' src={item.image[0]} alt="" />
                 <div>
                 <p className='sm:text-base font-medium'>{item.name}</p>
-                <div className='flex items-center gap-3 mt-2 text-base text-gray-700 dark:text-gray-300'>
+                <div className='flex items-center gap-3 mt-2 text-base text-gray-700 dark:text-gray-500'>
                   <p className='text-lg'>{currency}{item.price}</p>
                   <p>Quantity: {item.quantity}</p>
                   <p>Size: {item.size}</p>
