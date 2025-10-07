@@ -113,7 +113,7 @@ const Collection = () => {
         {/* Loading */}
         {loadingProducts && <Loader label='Loading products...' />}
         {/* Map Products */}
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6 dark:text-gray-500'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
           {
             filterProducts.slice(0, visibleCount).map((item,index)=>(
               <ProductItem key={index} name={item.name} id={item._id} price={item.price} image={item.image} />
