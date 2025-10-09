@@ -2,7 +2,7 @@ import React from 'react'
 
 const DiscountBanner = () => {
   return (
-    <section className='bg-gradient-to-r from-purple-100 via-pink-100 to-yellow-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 rounded-lg shadow-xl p-8 border border-gray-200 dark:border-gray-700 mb-10 flex flex-col items-center text-center'>
+    <section id='discountBanner' className='bg-gradient-to-r from-purple-100 via-pink-100 to-yellow-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 rounded-lg shadow-xl p-8 border border-gray-200 dark:border-gray-700 mb-10 flex flex-col items-center text-center'>
       <div>
         <h3 className='text-2xl font-extrabold text-primary-700'>YeneStickers Special Discount!</h3>
         <p className='mt-1 text-gray-700 dark:text-primary-50'>Order more, save more!</p>
