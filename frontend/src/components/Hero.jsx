@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 
 
 const Hero = () => {
@@ -16,12 +15,12 @@ const Hero = () => {
           <a href='#after-hero' className='bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 z-0'>
             <span>🛍️</span> How To Order?
           </a>
-          <Link
-  to="/discount"
+          <a
+  href="#discountBanner"
   className="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
 >
   <span>🎁</span> Discount Info
-</Link>
+</a>
         </div>
         <div className='mt-16'>
           <a href='#after-hero' className='inline-block text-purple-600 hover:text-purple-700 transition-colors animate-bounce' aria-label='Scroll down'>
