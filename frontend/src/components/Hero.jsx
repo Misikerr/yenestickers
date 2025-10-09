@@ -16,11 +16,10 @@ const Hero = () => {
             <span>🛍️</span> How To Order?
           </a>
           <a
-            href="https://t.me/YeneStickersAdmin"
-            target="_blank"
+            href="/discount "
             className="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
-            <span>🎁</span> Order Custom Stickers
+            <span>🎁</span> Discount Info
           </a>
         </div>
         <div className='mt-16'>
