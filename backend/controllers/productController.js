@@ -26,7 +26,7 @@ const addProduct = async (req, res) => {
         let sizes = [];
         if (category === 'LaptopSkin'){
             sizes = ['13"','14"','15"'];
-            price = 500;
+            price = 400;
         } else {
             sizes = ['Tiny','Small','Large'];
             // Pricing for stickers is derived in frontend per size; store a base price
