@@ -62,7 +62,10 @@ const PricingCards = () => {
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-7 text-center border-2 border-blue-500 dark:border-blue-400">
               <h3 className="text-xl font-bold mb-4 flex items-center justify-center gap-2">Laptop Skins <i className="fas fa-laptop text-2xl"></i></h3>
               <ul className="text-gray-600 dark:text-gray-400 space-y-2 mb-4">
-                <li><span className="text-3xl font-bold text-purple-600 mb-4">499.99ብር</span></li>
+                <li>
+                  <span className="text-2xl text-gray-500 line-through mr-3">499.99ብር</span>
+                  <span className="text-3xl font-bold text-purple-600">399.99ብር</span>
+                </li>
               </ul>
               <ul className="text-gray-600 dark:text-gray-400 text-left space-y-2 mb-4">
                 <li><i className="fas fa-magic text-amber-500"></i> <span className="font-semibold">Transform your laptop's look instantly!</span></li>
