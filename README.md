@@ -170,7 +170,7 @@ POST /api/order/userorders # Get user orders
 ## 📞 Support
 
 - **🌐 Website**: [yenestickers.store](https://yenestickers.store)
-- **💬 Telegram**: [@YeneStickerGuy](https://t.me/YeneStickerGuy)
+- **💬 Telegram**: [@YeneStickersAdmin](https://t.me/YeneStickersAdmin)
 - **🐛 Issues**: [GitHub Issues](https://github.com/YourUsername/yenestickers/issues)
 
 ## 📜 License
