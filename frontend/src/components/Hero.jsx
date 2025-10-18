@@ -13,7 +13,7 @@ const Hero = () => {
         </p>
         <div className='flex flex-col sm:flex-row gap-4 mb-12'>
           <a href='/shop' className='bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 z-0'>
-            <span>🛍️</span> Browse Stickers
+            <span>🛍️</span> Order Stickers
           </a>
           <a
   href="#discountBanner"
