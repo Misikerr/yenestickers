@@ -47,18 +47,29 @@ const Collection = () => {
   },[applyFilter]);
 
 useEffect(() => {
-  const savedScrollY = sessionStorage.getItem('shopScrollY');
-  if (savedScrollY) window.scrollTo(0, parseInt(savedScrollY, 10));
+  const navigationType = performance.getEntriesByType('navigation')[0]?.type;
+
+  // Only restore scroll if user came back using browser back/forward, not from a fresh visit
+  if (navigationType === 'back_forward') {
+    const savedScrollY = sessionStorage.getItem('shopScrollY');
+    if (savedScrollY) {
+      window.scrollTo(0, parseInt(savedScrollY, 10));
+    }
+  }
 
   const saveScroll = () => {
     sessionStorage.setItem('shopScrollY', window.scrollY);
   };
+
   window.addEventListener('scroll', saveScroll);
+
   return () => {
     window.removeEventListener('scroll', saveScroll);
+    // Always store the latest position before unmount
     sessionStorage.setItem('shopScrollY', window.scrollY);
   };
 }, []);
+
 
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
