@@ -5,7 +5,6 @@ import About from './pages/About'
 import Collection from './pages/Collection'
 import Contact from './pages/Contact'
 import Product from './pages/Product'
-import DiscountBanner from "./components/DiscountBanner";
 import Cart from './pages/Cart'
 import Login from './pages/Login'
 import PlaceOrder from './pages/PlaceOrder'
@@ -32,6 +31,27 @@ const App = () => {
           return;
         }
       }
+      
+      // Special handling for shop page - check if we should restore scroll position
+      if (location.pathname === '/shop') {
+        const shouldRestoreScroll = sessionStorage.getItem('shouldRestoreShopScroll') === 'true';
+        const savedScrollY = sessionStorage.getItem('shopScrollY');
+        
+        console.log('App.jsx shop page check:', { shouldRestoreScroll, savedScrollY, pathname: location.pathname });
+        
+        if (shouldRestoreScroll) {
+          // Don't scroll to top for back navigation to shop page
+          // The Collection component will handle scroll restoration
+          console.log('Skipping scroll to top - will restore position');
+          sessionStorage.removeItem('shouldRestoreShopScroll');
+          return;
+        } else {
+          // Clear saved scroll position for fresh visits
+          console.log('Fresh visit - clearing saved scroll position');
+          sessionStorage.removeItem('shopScrollY');
+        }
+      }
+      
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, 0);
   }, [location.pathname, location.hash]);
@@ -58,7 +78,6 @@ const App = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/place-order' element={<PlaceOrder/>}/>
         <Route path='/orders' element={<Orders/>}/>
-        <Route path="/discount" element={<DiscountBanner />} />
       </Routes>
       <Footer/>
     </div>
