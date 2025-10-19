@@ -46,7 +46,19 @@ const Collection = () => {
     setVisibleCount(25);
   },[applyFilter]);
 
+useEffect(() => {
+  const savedScrollY = sessionStorage.getItem('shopScrollY');
+  if (savedScrollY) window.scrollTo(0, parseInt(savedScrollY, 10));
 
+  const saveScroll = () => {
+    sessionStorage.setItem('shopScrollY', window.scrollY);
+  };
+  window.addEventListener('scroll', saveScroll);
+  return () => {
+    window.removeEventListener('scroll', saveScroll);
+    sessionStorage.setItem('shopScrollY', window.scrollY);
+  };
+}, []);
 
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
