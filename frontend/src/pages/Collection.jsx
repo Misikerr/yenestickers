@@ -47,28 +47,99 @@ const Collection = () => {
   },[applyFilter]);
 
 useEffect(() => {
-  const navigationType = performance.getEntriesByType('navigation')[0]?.type;
-
-  // Only restore scroll if user came back using browser back/forward, not from a fresh visit
-  if (navigationType === 'back_forward') {
-    const savedScrollY = sessionStorage.getItem('shopScrollY');
-    if (savedScrollY) {
-      window.scrollTo(0, parseInt(savedScrollY, 10));
-    }
-  }
-
+  // Throttled scroll save function to avoid excessive sessionStorage writes
+  let scrollTimeout;
   const saveScroll = () => {
-    sessionStorage.setItem('shopScrollY', window.scrollY);
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const currentScrollY = window.scrollY;
+      console.log('Saving scroll position:', currentScrollY);
+      sessionStorage.setItem('shopScrollY', currentScrollY.toString());
+    }, 100);
   };
 
-  window.addEventListener('scroll', saveScroll);
+  window.addEventListener('scroll', saveScroll, { passive: true });
 
   return () => {
     window.removeEventListener('scroll', saveScroll);
-    // Always store the latest position before unmount
-    sessionStorage.setItem('shopScrollY', window.scrollY);
+    clearTimeout(scrollTimeout);
+    // Only save final scroll position if we haven't already saved it for navigation
+    const existingScrollY = sessionStorage.getItem('shopScrollY');
+    if (!existingScrollY || existingScrollY === '0') {
+      const finalScrollY = window.scrollY;
+      console.log('Saving final scroll position on unmount:', finalScrollY);
+      sessionStorage.setItem('shopScrollY', finalScrollY.toString());
+    } else {
+      console.log('Not overwriting existing scroll position on unmount:', existingScrollY);
+    }
   };
 }, []);
+
+// Effect to detect when user navigates away from shop page
+useEffect(() => {
+  // Always set the flag when component mounts (user is on shop page)
+  sessionStorage.setItem('shouldRestoreShopScroll', 'true');
+
+  const handleBeforeUnload = () => {
+    // Set flag to restore scroll when coming back
+    sessionStorage.setItem('shouldRestoreShopScroll', 'true');
+  };
+
+  // Listen for clicks on product links
+  const handleProductClick = (e) => {
+    const link = e.target.closest('a[href*="/product/"]');
+    if (link) {
+      // Save current scroll position immediately before navigation
+      const currentScrollY = window.scrollY;
+      console.log('Product link clicked, saving scroll position:', currentScrollY);
+      sessionStorage.setItem('shopScrollY', currentScrollY.toString());
+      sessionStorage.setItem('shouldRestoreShopScroll', 'true');
+    }
+  };
+
+  document.addEventListener('click', handleProductClick);
+  window.addEventListener('beforeunload', handleBeforeUnload);
+
+  return () => {
+    document.removeEventListener('click', handleProductClick);
+    window.removeEventListener('beforeunload', handleBeforeUnload);
+  };
+}, []);
+
+// Effect to handle scroll restoration after content loads
+useEffect(() => {
+  const savedScrollY = sessionStorage.getItem('shopScrollY');
+  const shouldRestore = sessionStorage.getItem('shouldRestoreShopScroll');
+  
+  console.log('Scroll restoration check:', { savedScrollY, shouldRestore, loadingProducts, filterProductsLength: filterProducts.length, visibleCount });
+  
+  if (savedScrollY && shouldRestore === 'true' && !loadingProducts && filterProducts.length > 0) {
+    console.log('Restoring scroll to:', savedScrollY);
+    
+    // Calculate how many items we need to show to reach the saved scroll position
+    const targetScrollY = parseInt(savedScrollY, 10);
+    const itemsPerRow = window.innerWidth < 768 ? 2 : window.innerWidth < 1024 ? 3 : 4;
+    const estimatedItemsNeeded = Math.ceil((targetScrollY / 300) * itemsPerRow) + 10; // Add buffer
+    
+    // If we need more items than currently visible, show them first
+    if (estimatedItemsNeeded > visibleCount) {
+      console.log(`Need to show more items: ${estimatedItemsNeeded} vs ${visibleCount}`);
+      setVisibleCount(Math.min(estimatedItemsNeeded, filterProducts.length));
+      return; // This will trigger the effect again with the new visibleCount
+    }
+    
+    // Restore scroll position after content is loaded
+    const restoreScroll = () => {
+      window.scrollTo(0, targetScrollY);
+      console.log('Scroll restored to:', window.scrollY);
+    };
+    
+    // Use requestAnimationFrame to ensure DOM is ready
+    requestAnimationFrame(() => {
+      setTimeout(restoreScroll, 100);
+    });
+  }
+}, [loadingProducts, filterProducts.length, visibleCount]);
 
 
   return (
