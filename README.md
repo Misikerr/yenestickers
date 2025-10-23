@@ -5,7 +5,7 @@
 **Transform your world with 1000+ unique stickers and premium laptop skins!**
 
 [![Live Site](https://img.shields.io/badge/🌐_Live_Site-yenestickers.store-purple?style=for-the-badge)](https://yenestickers.store)
-[![Telegram](https://img.shields.io/badge/💬_Custom_Orders-@YeneStickerGuy-0088cc?style=for-the-badge&logo=telegram)](https://t.me/YeneStickerGuy)
+[![Telegram](https://img.shields.io/badge/💬_Custom_Orders-@YeneStickersAdmin-0088cc?style=for-the-badge&logo=telegram)](https://t.me/YeneStickersAdmin)
 
 ![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=flat-square&logo=react)
 ![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=flat-square&logo=node.js)
