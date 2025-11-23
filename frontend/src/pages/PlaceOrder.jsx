@@ -241,8 +241,8 @@ const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, prod
                 </div>
               ) : (
                 <div>
-                  <p><span className='font-semibold'>Telebirr Number:</span> 0944037042</p>
-                  <p><span className='font-semibold'>Name:</span> Misikir</p>
+                  <p><span className='font-semibold'>Telebirr Number:</span> 0973674201</p>
+                  <p><span className='font-semibold'>Name:</span> Kenedi</p>
                 </div>
               )}
             </div>
